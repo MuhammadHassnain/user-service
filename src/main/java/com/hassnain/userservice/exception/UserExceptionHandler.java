@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.aiksath.core.exception.ExceptionResponse;
+import com.hassnain.core.exception.ExceptionResponse;
 import com.hassnain.userservice.exception.UserException.DuplicateEmailException;
 import com.hassnain.userservice.exception.UserException.UserNotFoundException;
 
