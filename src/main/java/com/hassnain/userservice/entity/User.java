@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.aiksath.core.entity.AbstractTimestampEntity;
+import com.hassnain.core.entity.AbstractTimeStampEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +22,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User extends AbstractTimestampEntity{
+public class User extends AbstractTimeStampEntity {
 	
 	@Column(name="ID")
 	@Id
