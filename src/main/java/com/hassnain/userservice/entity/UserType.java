@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.entity;
+package com.hassnain.userservice.entity;
 
 public enum UserType {
 

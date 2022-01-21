@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.mapper;
+package com.hassnain.userservice.mapper;
 
 
 import org.modelmapper.ModelMapper;
@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sharetaxi.userservice.dto.CreateUserRequest;
-import com.sharetaxi.userservice.entity.User;
-import com.sharetaxi.userservice.entity.UserType;
+import com.hassnain.userservice.dto.CreateUserRequest;
+import com.hassnain.userservice.entity.User;
+import com.hassnain.userservice.entity.UserType;
 
 @Component
 public class UserMapper {

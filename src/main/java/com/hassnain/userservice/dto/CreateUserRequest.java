@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.dto;
+package com.hassnain.userservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

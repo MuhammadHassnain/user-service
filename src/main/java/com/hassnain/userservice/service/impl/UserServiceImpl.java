@@ -1,14 +1,14 @@
-package com.sharetaxi.userservice.service.impl;
+package com.hassnain.userservice.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sharetaxi.userservice.entity.User;
-import com.sharetaxi.userservice.exception.UserException;
-import com.sharetaxi.userservice.repository.UserRepository;
-import com.sharetaxi.userservice.service.UserService;
+import com.hassnain.userservice.entity.User;
+import com.hassnain.userservice.exception.UserException;
+import com.hassnain.userservice.repository.UserRepository;
+import com.hassnain.userservice.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.controller;
+package com.hassnain.userservice.controller;
 
 
 import org.slf4j.Logger;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sharetaxi.userservice.dto.CreateUserRequest;
-import com.sharetaxi.userservice.entity.User;
-import com.sharetaxi.userservice.mapper.UserMapper;
-import com.sharetaxi.userservice.service.UserService;
+import com.hassnain.userservice.dto.CreateUserRequest;
+import com.hassnain.userservice.entity.User;
+import com.hassnain.userservice.mapper.UserMapper;
+import com.hassnain.userservice.service.UserService;
 
 @RestController
 @RequestMapping(path = "/users")

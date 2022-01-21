@@ -1,11 +1,11 @@
-package com.sharetaxi.userservice.repository;
+package com.hassnain.userservice.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.sharetaxi.userservice.entity.User;
+import com.hassnain.userservice.entity.User;
 
 
 @Repository

@@ -1,6 +1,6 @@
-package com.sharetaxi.userservice.service;
+package com.hassnain.userservice.service;
 
-import com.sharetaxi.userservice.entity.User;
+import com.hassnain.userservice.entity.User;
 
 public interface UserService {
 	

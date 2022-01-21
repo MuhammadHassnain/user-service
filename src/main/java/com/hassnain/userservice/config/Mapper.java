@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.config;
+package com.hassnain.userservice.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

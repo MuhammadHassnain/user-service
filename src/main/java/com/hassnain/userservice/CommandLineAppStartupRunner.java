@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice;
+package com.hassnain.userservice;
 
 
 import org.slf4j.Logger;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.sharetaxi.userservice.entity.User;
-import com.sharetaxi.userservice.entity.UserType;
-import com.sharetaxi.userservice.service.UserService;
+import com.hassnain.userservice.entity.User;
+import com.hassnain.userservice.entity.UserType;
+import com.hassnain.userservice.service.UserService;
 
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner{

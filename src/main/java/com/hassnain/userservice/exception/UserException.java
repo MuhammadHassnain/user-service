@@ -1,4 +1,4 @@
-package com.sharetaxi.userservice.exception;
+package com.hassnain.userservice.exception;
 
 public class UserException {
 	
