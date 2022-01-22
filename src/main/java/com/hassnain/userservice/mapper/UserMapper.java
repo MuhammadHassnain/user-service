@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.hassnain.userservice.dto.CreateUserRequest;
@@ -22,13 +24,16 @@ public class UserMapper {
 	@Autowired ModelMapper modelMapper;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserMapper.class);
+
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	public User CreateUserRequestToUser(CreateUserRequest createUserRequest) {
 		User user = modelMapper.map(createUserRequest, User.class);
 		user.setCreatedBy(user.getFirstName() + " "+ user.getLastName());
 		user.setUpdatedBy(user.getCreatedBy());
 		user.setUserType(UserType.NORMAL);
-		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		logger.info("Mapped Create User request to: "+user);
 		return user;
 	}
