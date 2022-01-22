@@ -25,7 +25,7 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
 			ExceptionResponse exceptionResponse = new ExceptionResponse();
 			exceptionResponse.setMessage(MessageFormat.format(UserExceptionType.USER_NOT_FOUND.getMessage(),exception.getMessage()));
 			exceptionResponse.setAction(UserExceptionType.USER_NOT_FOUND.getAction());
-			return new ResponseEntity<ExceptionResponse>(exceptionResponse,UserExceptionType.USER_NOT_FOUND.getHttpStatus());
+			return new ResponseEntity<>(exceptionResponse, UserExceptionType.USER_NOT_FOUND.getHttpStatus());
 		}
 		
 
@@ -37,7 +37,7 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
 			ExceptionResponse exceptionResponse = new ExceptionResponse();
 			exceptionResponse.setMessage(MessageFormat.format(UserExceptionType.DUPLICATE_USER.getMessage(),exception.getMessage()));
 			exceptionResponse.setAction(UserExceptionType.DUPLICATE_USER.getAction());
-			return new ResponseEntity<ExceptionResponse>(exceptionResponse,UserExceptionType.DUPLICATE_USER.getHttpStatus());
+			return new ResponseEntity<>(exceptionResponse, UserExceptionType.DUPLICATE_USER.getHttpStatus());
 		}
 
 		

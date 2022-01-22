@@ -1,8 +1,13 @@
 package com.hassnain.userservice.service.impl;
 
+import java.text.MessageFormat;
 import java.util.Optional;
 
+import com.hassnain.userservice.exception.UserExceptionType;
+import com.hassnain.userservice.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.hassnain.userservice.entity.User;
@@ -13,8 +18,29 @@ import com.hassnain.userservice.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	UserRepository userRepo;
+	private final UserRepository userRepo;
+	private final UserMapper userMapper;
+
+	public UserServiceImpl(UserRepository userRepo, UserMapper userMapper) {
+		this.userRepo = userRepo;
+		this.userMapper = userMapper;
+	}
+
+
+	/**
+	 *
+	 * */
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+		Optional<User> userDbOptional = userRepo.findByEmail(email);
+		if(userDbOptional.isPresent()){
+			User user = userDbOptional.get();
+
+			return userMapper.UserToUserDetail(user);
+		}
+		throw new UsernameNotFoundException(MessageFormat.format(UserExceptionType.USER_NOT_FOUND.getMessage(),email));
+	}
 
 	@Override
 	public User createUser(User user) {
@@ -41,5 +67,6 @@ public class UserServiceImpl implements UserService {
 		throw new UserException.UserNotFoundException(user.getEmail());
 
 	}
+
 
 }

@@ -1,6 +1,7 @@
 package com.hassnain.userservice.controller;
 
 
+import com.hassnain.userservice.dto.CreateUserResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,15 +28,15 @@ public class UserController {
 	
 	
 	@PostMapping
-	public ResponseEntity<Object> createUser(@RequestBody CreateUserRequest createUserRequest) {
+	public ResponseEntity<CreateUserResponse> createUser(@RequestBody CreateUserRequest createUserRequest) {
 		
 		
 		logger.info("Received Create User Request: "+createUserRequest);
 		
 		User user = userMapper.CreateUserRequestToUser(createUserRequest);
 		User createdUser = userService.createUser(user);
-		
-		return new ResponseEntity<Object>(createdUser, HttpStatus.OK);
+
+		return new ResponseEntity<>(userMapper.UserToCreateUserResponse(createdUser), HttpStatus.OK);
 		
 		
 	}

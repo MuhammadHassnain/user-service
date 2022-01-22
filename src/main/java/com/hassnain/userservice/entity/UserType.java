@@ -20,4 +20,8 @@ public enum UserType {
 	public String getName() {
 		return name;
 	}
+
+	public String convertToRole(){
+		return "ROLE_" + this.name;
+	}
 }
