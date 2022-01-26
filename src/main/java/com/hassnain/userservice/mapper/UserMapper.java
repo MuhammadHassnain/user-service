@@ -2,13 +2,13 @@ package com.hassnain.userservice.mapper;
 
 
 import com.hassnain.userservice.dto.CreateUserResponse;
+import com.hassnain.userservice.dto.LoginResponse;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -50,5 +50,11 @@ public class UserMapper {
 
 	public CreateUserResponse UserToCreateUserResponse(User user){
 		return modelMapper.map(user, CreateUserResponse.class);
+	}
+
+	public LoginResponse UserToLoginUserReponse(User user,String token){
+		LoginResponse loginResponse = modelMapper.map(user, LoginResponse.class);
+		loginResponse.setToken(token);
+		return loginResponse;
 	}
 }

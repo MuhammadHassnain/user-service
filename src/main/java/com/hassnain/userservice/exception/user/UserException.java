@@ -1,4 +1,4 @@
-package com.hassnain.userservice.exception;
+package com.hassnain.userservice.exception.user;
 
 public class UserException {
 	

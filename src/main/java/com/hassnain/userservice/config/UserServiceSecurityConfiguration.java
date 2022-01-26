@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -40,6 +39,7 @@ public class UserServiceSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .authenticated();
 
         http.addFilter(new ApiUsernamePasswordAuthFilter(authenticationManager()));
+        http.addFilterBefore(new AuthenticationExceptionHandler(),ApiUsernamePasswordAuthFilter.class);
     }
 
     @Override

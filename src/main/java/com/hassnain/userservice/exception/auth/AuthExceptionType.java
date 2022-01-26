@@ -1,17 +1,17 @@
-package com.hassnain.userservice.exception;
+package com.hassnain.userservice.exception.auth;
 
 import org.springframework.http.HttpStatus;
 
-public enum UserExceptionType {
-	
-	USER_NOT_FOUND("User with email {0} doesn't found","Please use valid email",HttpStatus.NOT_FOUND),
-	DUPLICATE_USER("Email {0} already in Use","Try again with new email", HttpStatus.BAD_REQUEST);
-	
+public enum AuthExceptionType {
+
+	USER_LOCKED("{0} is locked","Please contact support",HttpStatus.LOCKED),
+	INVALID_CREDENTIAL("Credential is not valid","Please check  your credential", HttpStatus.UNAUTHORIZED);
+
 	private String message;
 	private String action;
 	private HttpStatus httpStatus;
-	
-	UserExceptionType(String message,String action,HttpStatus httpStatus) {
+
+	AuthExceptionType(String message, String action, HttpStatus httpStatus) {
 		this.message = message;
 		this.action = action;
 		this.httpStatus = httpStatus;

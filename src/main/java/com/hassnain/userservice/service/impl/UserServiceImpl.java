@@ -3,15 +3,14 @@ package com.hassnain.userservice.service.impl;
 import java.text.MessageFormat;
 import java.util.Optional;
 
-import com.hassnain.userservice.exception.UserExceptionType;
+import com.hassnain.userservice.exception.user.UserExceptionType;
 import com.hassnain.userservice.mapper.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.hassnain.userservice.entity.User;
-import com.hassnain.userservice.exception.UserException;
+import com.hassnain.userservice.exception.user.UserException;
 import com.hassnain.userservice.repository.UserRepository;
 import com.hassnain.userservice.service.UserService;
 
@@ -65,8 +64,15 @@ public class UserServiceImpl implements UserService {
 		}
 
 		throw new UserException.UserNotFoundException(user.getEmail());
-
 	}
 
 
+	@Override
+	public User findUserByEmail(String email) {
+		Optional<User> dbUserO = userRepo.findByEmail(email);
+		if (dbUserO.isPresent()) {
+			return dbUserO.get();
+		}
+		throw new UserException.UserNotFoundException(email);
+	}
 }

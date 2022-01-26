@@ -1,5 +1,7 @@
 package com.hassnain.userservice.config;
 
+import com.hassnain.core.security.jwt.JwtConfiguration;
+import com.hassnain.core.security.jwt.JwtManager;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +21,11 @@ public class BasicConfiguration {
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
-	
-	
+
+	@Bean
+	JwtManager jwtManager(){return new JwtManager();}
+
+
+	@Bean
+	JwtConfiguration jwtConfiguration(){return new JwtConfiguration();}
 }

@@ -1,4 +1,4 @@
-package com.hassnain.userservice.exception;
+package com.hassnain.userservice.exception.user;
 
 import java.text.MessageFormat;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.hassnain.core.exception.ExceptionResponse;
-import com.hassnain.userservice.exception.UserException.DuplicateEmailException;
-import com.hassnain.userservice.exception.UserException.UserNotFoundException;
+import com.hassnain.userservice.exception.user.UserException.DuplicateEmailException;
+import com.hassnain.userservice.exception.user.UserException.UserNotFoundException;
 
 
 @ControllerAdvice
